@@ -52,7 +52,7 @@ function App() {
         </h1>
 
         <p className="coming-soon__subtitle animate-fade-in-up stagger-2">
-          Add life to your space.
+          Add life to your space with custom murals.
         </p>
 
         <div className="coming-soon__divider animate-fade-in stagger-3"></div>
