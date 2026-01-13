@@ -52,8 +52,7 @@ function App() {
         </h1>
 
         <p className="coming-soon__subtitle animate-fade-in-up stagger-2">
-          A new artistic journey awaits. Custom murals that transform
-          spaces into unforgettable experiences.
+          Add life to your space.
         </p>
 
         <div className="coming-soon__divider animate-fade-in stagger-3"></div>
