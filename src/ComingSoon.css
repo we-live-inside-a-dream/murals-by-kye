@@ -203,8 +203,111 @@
     color: var(--color-text-muted);
 }
 
+/* Phone Number */
+.coming-soon__phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.coming-soon__phone-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.coming-soon__phone-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.coming-soon__phone-number:hover {
+    color: var(--color-accent-light);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Contact Form */
+.coming-soon__contact {
+    width: 100%;
+    max-width: 500px;
+}
+
+.coming-soon__contact-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.coming-soon__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.coming-soon__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+}
+
+.coming-soon__textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.coming-soon__form .glass-btn {
+    width: 100%;
+    margin-top: var(--space-xs);
+}
+
+/* Success State */
+.coming-soon__success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--glass-bg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--radius-lg);
+}
+
+.coming-soon__success-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-accent);
+    background: rgba(212, 175, 55, 0.1);
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+}
+
+.coming-soon__success p {
+    color: var(--color-text-secondary);
+}
+
 /* Responsive */
 @media (max-width: 600px) {
+    .coming-soon__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .coming-soon__phone-number {
+        font-size: 1.5rem;
+    }
+
     .coming-soon__form {
         flex-direction: column;
     }

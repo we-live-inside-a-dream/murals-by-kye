@@ -1,9 +1,35 @@
+import { useState } from 'react';
 import './styles/global.css';
 import './styles/liquid-glass.css';
 import './styles/animations.css';
 import './ComingSoon.css';
 
 function App() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${formData.name}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    window.location.href = `mailto:muralsbykye@gmail.com?subject=${subject}&body=${body}`;
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+    }, 500);
+  };
+
   return (
     <div className="coming-soon">
       {/* Animated Background */}
@@ -32,22 +58,75 @@ function App() {
 
         <div className="coming-soon__divider animate-fade-in stagger-3"></div>
 
-        <div className="coming-soon__cta animate-fade-in-up stagger-4">
-          <p className="coming-soon__cta-text">Get notified when we launch</p>
-          <form className="coming-soon__form" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              className="glass-input"
-              placeholder="Enter your email"
-              aria-label="Email address"
-            />
-            <button type="submit" className="glass-btn glass-btn--primary">
-              Notify Me
-            </button>
-          </form>
+        {/* Phone Number */}
+        <div className="coming-soon__phone animate-fade-in-up stagger-4">
+          <span className="coming-soon__phone-label">Call or text</span>
+          <a href="tel:+14038075986" className="coming-soon__phone-number">
+            (403) 807-5986
+          </a>
         </div>
 
-        <div className="coming-soon__social animate-fade-in stagger-5">
+        {/* Contact Form */}
+        <div className="coming-soon__contact animate-fade-in-up stagger-5">
+          {submitted ? (
+            <div className="coming-soon__success">
+              <div className="coming-soon__success-icon">✓</div>
+              <p>Thank you! Your email client should open with your message.</p>
+              <button
+                className="glass-btn"
+                onClick={() => setSubmitted(false)}
+              >
+                Send Another
+              </button>
+            </div>
+          ) : (
+            <>
+              <p className="coming-soon__contact-label">Or send a message</p>
+              <form className="coming-soon__form" onSubmit={handleSubmit}>
+                <div className="coming-soon__form-row">
+                  <input
+                    type="text"
+                    name="name"
+                    className="glass-input"
+                    placeholder="Your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    aria-label="Your name"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    className="glass-input"
+                    placeholder="Your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    aria-label="Your email"
+                  />
+                </div>
+                <textarea
+                  name="message"
+                  className="glass-input coming-soon__textarea"
+                  placeholder="Tell me about your project..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  aria-label="Your message"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="glass-btn glass-btn--primary"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Opening...' : 'Send Message'}
+                </button>
+              </form>
+            </>
+          )}
+        </div>
+
+        <div className="coming-soon__social animate-fade-in stagger-6">
           <span>Follow the journey</span>
           <div className="coming-soon__social-links">
             <a
@@ -62,7 +141,7 @@ function App() {
               </svg>
             </a>
             <a
-              href="mailto:hello@muralsbykye.com"
+              href="mailto:muralsbykye@gmail.com"
               className="coming-soon__social-link"
               aria-label="Email"
             >
