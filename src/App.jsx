@@ -14,20 +14,37 @@ function App() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Contact from ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    window.location.href = `mailto:muralsbykye@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/muralsbykye@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New inquiry from ${formData.name}`
+        })
+      });
 
-    setTimeout(() => {
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert('Something went wrong. Please try again or call us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Something went wrong. Please try again or call us directly.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-    }, 500);
+    }
   };
 
   return (
@@ -70,7 +87,7 @@ function App() {
           {submitted ? (
             <div className="coming-soon__success">
               <div className="coming-soon__success-icon">✓</div>
-              <p>Thank you! Your email client should open with your message.</p>
+              <p>Thank you! We'll get back to you soon.</p>
               <button
                 className="glass-btn"
                 onClick={() => setSubmitted(false)}
@@ -118,7 +135,7 @@ function App() {
                   className="glass-btn glass-btn--primary"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Opening...' : 'Send Message'}
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </>
