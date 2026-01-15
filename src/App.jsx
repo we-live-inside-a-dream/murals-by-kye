@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import './styles/global.css';
 import './styles/liquid-glass.css';
 import './styles/animations.css';
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <div className="coming-soon">
+      <Analytics />
       {/* Animated Background */}
       <div className="coming-soon__bg">
         <div className="coming-soon__orb coming-soon__orb--1"></div>
