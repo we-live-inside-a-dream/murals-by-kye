@@ -1,4 +1,5 @@
 import './About.css';
+import artistImage from '../assets/IMG_0040_2.jpg';
 
 const About = () => {
     return (
@@ -19,7 +20,7 @@ const About = () => {
                     <div className="about-main__grid">
                         <div className="about-main__image-container">
                             <div className="about-main__image glass-panel shimmer">
-                                <span>Artist Portrait</span>
+                                <img src={artistImage} alt="Urban Dreams Mural" />
                             </div>
                             <div className="about-main__accent-shape"></div>
                         </div>
@@ -43,7 +44,7 @@ const About = () => {
                                 your personality, brand, or community's spirit.
                             </p>
 
-                            <div className="about-main__stats">
+                            {/* <div className="about-main__stats">
                                 <div className="about-main__stat glass-card">
                                     <span className="about-main__stat-number">10+</span>
                                     <span className="about-main__stat-label">Years Experience</span>
@@ -56,7 +57,7 @@ const About = () => {
                                     <span className="about-main__stat-number">50+</span>
                                     <span className="about-main__stat-label">Happy Clients</span>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

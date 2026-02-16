@@ -1,4 +1,8 @@
 import { Link } from 'react-router-dom';
+import artistImage from '../assets/IMG_0045_2.jpg';
+import mural1 from '../assets/IMG_0058_2.jpg';
+import mural2 from '../assets/IMG_0040_2.jpg';
+import mural3 from '../assets/IMG_0041_2.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -25,9 +29,9 @@ const Home = () => {
                             and create unforgettable experiences.
                         </p>
                         <div className="hero__cta stagger-4">
-                            <Link to="/gallery" className="glass-btn glass-btn--primary">
+                            {/* <Link to="/gallery" className="glass-btn glass-btn--primary">
                                 View Gallery
-                            </Link>
+                            </Link> */}
                             <Link to="/contact" className="glass-btn">
                                 Get in Touch
                             </Link>
@@ -46,32 +50,34 @@ const Home = () => {
                 <div className="container">
                     <div className="featured__header">
                         <h2 className="section-title">Featured Works</h2>
-                        <Link to="/gallery" className="featured__link link-underline">
+                        {/* <Link to="/gallery" className="featured__link link-underline">
                             View All <span>→</span>
-                        </Link>
+                        </Link> */}
                     </div>
 
                     <div className="featured__grid">
+                        {/* <div className="featured__highlight"> */}
                         <div className="featured__item glass-card hover-lift">
                             <div className="featured__image shimmer">
-                                <span>Artwork 1</span>
+                                <img src={mural1} alt="Urban Dreams Mural" />
                             </div>
-                            <h3 className="featured__title">Urban Dreams</h3>
-                            <p className="featured__desc">A vibrant cityscape mural</p>
+                            {/* <h3 className="featured__title">Urban Dreams</h3>
+                            <p className="featured__desc">A vibrant cityscape mural</p> */}
+                        </div>
+                        {/* </div> */}
+                        <div className="featured__item glass-card hover-lift">
+                            <div className="featured__image shimmer">
+                                <img src={mural2} alt="Nature's Embrace Mural" />
+                            </div>
+                            {/* <h3 className="featured__title">Nature's Embrace</h3>
+                            <p className="featured__desc">Botanical paradise on canvas</p> */}
                         </div>
                         <div className="featured__item glass-card hover-lift">
                             <div className="featured__image shimmer">
-                                <span>Artwork 2</span>
+                                <img src={mural3} alt="Abstract Flow Mural" />
                             </div>
-                            <h3 className="featured__title">Nature's Embrace</h3>
-                            <p className="featured__desc">Botanical paradise on canvas</p>
-                        </div>
-                        <div className="featured__item glass-card hover-lift">
-                            <div className="featured__image shimmer">
-                                <span>Artwork 3</span>
-                            </div>
-                            <h3 className="featured__title">Abstract Flow</h3>
-                            <p className="featured__desc">Dynamic movement in color</p>
+                            {/* <h3 className="featured__title">Abstract Flow</h3>
+                            <p className="featured__desc">Dynamic movement in color</p> */}
                         </div>
                     </div>
                 </div>
@@ -95,7 +101,7 @@ const Home = () => {
                             </Link>
                         </div>
                         <div className="about-preview__image shimmer">
-                            <span>Artist Portrait</span>
+                            <img src={artistImage} alt="Kye, Mural Artist" className="img-cover" />
                         </div>
                     </div>
                 </div>

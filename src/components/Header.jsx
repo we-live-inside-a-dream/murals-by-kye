@@ -57,13 +57,13 @@ const Header = () => {
                     >
                         About
                     </NavLink>
-                    <NavLink
+                    {/* <NavLink
                         to="/gallery"
                         className={({ isActive }) => `header__nav-link ${isActive ? 'active' : ''}`}
                         onClick={closeMobileMenu}
                     >
                         Gallery
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink
                         to="/contact"
                         className={({ isActive }) => `header__nav-link ${isActive ? 'active' : ''}`}

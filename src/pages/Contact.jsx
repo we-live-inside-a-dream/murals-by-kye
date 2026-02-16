@@ -17,16 +17,39 @@ const Contact = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/muralsbykye@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject || `New inquiry from ${formData.name}`,
+                    projectType: formData.projectType,
+                    message: formData.message,
+                    _subject: `New inquiry from ${formData.name}`
+                })
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+                setFormData({ name: '', email: '', subject: '', projectType: '', message: '' });
+            } else {
+                alert('Something went wrong. Please try again or email directly.');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('Something went wrong. Please try again or email directly.');
+        } finally {
             setIsSubmitting(false);
-            setSubmitted(true);
-            setFormData({ name: '', email: '', subject: '', projectType: '', message: '' });
-        }, 1500);
+        }
     };
 
     return (
@@ -161,7 +184,7 @@ const Contact = () => {
                                 <a href="mailto:hello@muralsbykye.com">hello@muralsbykye.com</a>
                             </div>
 
-                            <div className="contact-info__card glass-card">
+                            {/* <div className="contact-info__card glass-card">
                                 <div className="contact-info__icon">
                                     <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
                                         <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
@@ -169,7 +192,7 @@ const Contact = () => {
                                 </div>
                                 <h3>Location</h3>
                                 <p>Available for projects<br />nationwide & beyond</p>
-                            </div>
+                            </div> */}
 
                             <div className="contact-info__card glass-card">
                                 <div className="contact-info__icon">
@@ -178,7 +201,7 @@ const Contact = () => {
                                     </svg>
                                 </div>
                                 <h3>Follow Along</h3>
-                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">@muralsbykye</a>
+                                <a href="https://www.instagram.com/muralsbykye" target="_blank" rel="noopener noreferrer">@muralsbykye</a>
                             </div>
 
                             <div className="contact-info__note glass-panel">
