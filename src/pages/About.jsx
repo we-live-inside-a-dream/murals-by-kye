@@ -58,7 +58,7 @@ const About = () => {
             </section>
 
             {/* Philosophy */}
-            <section className="philosophy section">
+            {/* <section className="philosophy section">
                 <div className="container">
                     <div className="philosophy__content glass-panel glass-panel--accent">
                         <blockquote className="philosophy__quote">
@@ -69,7 +69,7 @@ const About = () => {
                         <cite className="philosophy__cite">— Kye</cite>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Process */}
             <section className="process section">
