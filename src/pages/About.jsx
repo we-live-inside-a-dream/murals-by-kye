@@ -9,7 +9,7 @@ const About = () => {
                 <div className="container">
                     <div className="about-hero__content animate-fade-in-up">
                         <span className="glass-tag">About the Artist</span>
-                        <h1>The Vision Behind<br /><span className="text-accent">Every Brushstroke</span></h1>
+                        <h1>Thoughtful Work,<br /><span className="text-accent">Created with Intention</span></h1>
                     </div>
                 </div>
             </section>
@@ -26,22 +26,16 @@ const About = () => {
                         </div>
 
                         <div className="about-main__content">
-                            <h2>Hello, I'm Kye</h2>
-                            <p className="about-main__intro">
-                                A passionate mural artist dedicated to transforming ordinary spaces
-                                into extraordinary visual experiences.
+                            <h2>Hi, I’m Kye.</h2>
+                            <p>
+                                I’ve been making art for as long as I can remember. What started as painting on small canvases as a teenager has grown into large-scale mural work — and somewhere along the way, I fell in love with the way art can completely shift a space.
                             </p>
                             <p>
-                                My journey with art began in childhood, where I found endless
-                                fascination in color, form, and the power of visual storytelling.
-                                Over the years, that passion evolved into a career spanning
-                                residential murals, commercial installations, and public art
-                                projects.
+                                I’m especially drawn to environments that feel thoughtful and intentional. Whether it’s a large mural or a simple shift in color, I believe small details can completely change the atmosphere of a room. The goal is always the same: to create something that feels intentional and alive.
+                                I offer both custom mural work and residential painting — whether that means a large-scale statement piece, a simple accent wall, or refreshing a room with a new color. Sometimes transformation is bold, and sometimes it’s beautifully simple.
                             </p>
                             <p>
-                                Every wall tells a story. My mission is to help you discover
-                                and express that story through custom artwork that reflects
-                                your personality, brand, or community's spirit.
+                                Collaboration is at the heart of what I do. Your vision matters, and my role is to bring it into focus with care and precision. I’m detail-oriented by nature, and I take pride in creating work that feels thoughtful and truly at home in your space — no matter the scale.
                             </p>
 
                             {/* <div className="about-main__stats">

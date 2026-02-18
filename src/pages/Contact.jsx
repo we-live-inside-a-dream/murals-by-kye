@@ -181,7 +181,7 @@ const Contact = () => {
                                     </svg>
                                 </div>
                                 <h3>Email</h3>
-                                <a href="mailto:hello@muralsbykye.com">hello@muralsbykye.com</a>
+                                <a href="mailto:muralsbykye@gmail.com">muralsbykye@gmail.com</a>
                             </div>
 
                             {/* <div className="contact-info__card glass-card">

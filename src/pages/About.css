@@ -68,6 +68,12 @@
     margin-bottom: var(--space-sm);
 }
 
+.about-main__content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
 .about-main__intro {
     font-size: 1.25rem;
     color: var(--color-text-primary);

@@ -21,12 +21,10 @@ const Home = () => {
                     <div className="hero__text animate-fade-in-up">
                         <span className="glass-tag stagger-1">Mural Artist</span>
                         <h1 className="hero__title stagger-2">
-                            Transforming <span className="text-accent">Spaces</span><br />
-                            Into Living Art
+                            Add life to your <span className="text-accent">Spaces</span><br />
                         </h1>
                         <p className="hero__subtitle stagger-3">
-                            Custom murals that tell your story, breathe life into your walls,
-                            and create unforgettable experiences.
+                            Custom murals and residential painting designed with intention, collaboration, and care.
                         </p>
                         <div className="hero__cta stagger-4">
                             {/* <Link to="/gallery" className="glass-btn glass-btn--primary">
@@ -91,10 +89,7 @@ const Home = () => {
                             <span className="glass-tag">The Artist</span>
                             <h2>Creating Beauty, One Wall at a Time</h2>
                             <p>
-                                With over a decade of experience transforming spaces, Kye brings
-                                a unique vision that blends contemporary artistry with timeless
-                                elegance. Every mural is a collaboration—a story waiting to unfold
-                                on your walls.
+                                From small canvas paintings to large-scale murals, Kye’s work has always centered around transformation. Each project is a collaboration, guided by the client’s vision and refined through a thoughtful, detail-oriented process. The result is artwork that feels natural, intentional, and truly at home on the wall. Keep the title.
                             </p>
                             <Link to="/about" className="glass-btn">
                                 Learn More
